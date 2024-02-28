@@ -1,7 +1,7 @@
 #-- SplayTreeInsertionTests.tstl --
 
 #-- Include necessary libraries and define configurations
-include <deepstate/DeepState.py>
+import deepstate.DeepState as DeepState
 include "splay.py"
 
 #-- Define the Splay Tree insertion test class
