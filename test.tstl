@@ -3,6 +3,7 @@
 #-- Include necessary libraries and define configurations
 import deepstate.DeepState as DeepState
 include "splay.py"
+import splay
 
 #-- Define the Splay Tree insertion test class
 class SplayTreeInsertionTests(DeepStateTestCase):
