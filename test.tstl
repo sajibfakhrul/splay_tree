@@ -4,6 +4,8 @@
 #--@import deepstate.DeepState as DeepState
 @import splay
 @import deepstate
+#--@import deepstate.DeepState as DeepState
+@from deepstate.DeepState import DeepStateTestCase
 
 
 <@
