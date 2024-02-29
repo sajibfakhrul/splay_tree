@@ -1,9 +1,9 @@
 #-- SplayTreeInsertionTests.tstl --
 
 #-- Include necessary libraries and define configurations
-import deepstate.DeepState as DeepState
-import splay
-
+@import deepstate.DeepState as DeepState
+@import splay
+<@
 #-- Define the Splay Tree insertion test class
 class SplayTreeInsertionTests(DeepStateTestCase):
 
@@ -38,3 +38,4 @@ class SplayTreeInsertionTests(DeepStateTestCase):
         if root.key < key:
             return self.key_exists(root.right, key)
         return self.key_exists(root.left, key)
+@>
