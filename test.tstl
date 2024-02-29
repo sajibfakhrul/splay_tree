@@ -2,10 +2,11 @@
 
 #-- Include necessary libraries and define configurations
 import splay
+import deepstate.DeepState as DeepState
 
 <@
 #-- Define the Splay Tree insertion test class
-class SplayTreeInsertionTests(SplayTestCase):
+class SplayTestCase(DeepState.DeepStateTestCase):
 
     #-- Define test case for inserting into an empty tree
     def test_insert_into_empty_tree(self):
