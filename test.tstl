@@ -1,8 +1,9 @@
 #-- SplayTreeInsertionTests.tstl --
 
 #-- Include necessary libraries and define configurations
-import splay
-import DeepState
+@import splay
+@import DeepState
+@import math
 
 <@
 #-- Define the Splay Tree insertion test class
