@@ -2,7 +2,7 @@
 
 #-- Include necessary libraries and define configurations
 import splay
-import deepstate.DeepState as DeepState
+import DeepState
 
 <@
 #-- Define the Splay Tree insertion test class
