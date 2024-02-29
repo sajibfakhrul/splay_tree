@@ -1,32 +1,30 @@
 #-- SplayTreeInsertionTests.tstl --
 
 #-- Include necessary libraries and define configurations
-@import deepstate.DeepState as DeepState
-@import splay
+import splay
+
 <@
 #-- Define the Splay Tree insertion test class
-class SplayTreeInsertionTests(DeepStateTestCase):
+class SplayTreeInsertionTests(SplayTestCase):
 
     #-- Define test case for inserting into an empty tree
-    @deepstate_config(max_tests=100)
     def test_insert_into_empty_tree(self):
         root = None
         key = self.randint(0, 1000)
-        root = insert(root, key)
+        root = splay.insert(root, key)
         self.assertEqual(root.key, key, "Root should be equal to the inserted key")
 
     #-- Define test case for inserting into a non-empty tree
-    @deepstate_config(max_tests=100)
     def test_insert_into_non_empty_tree(self):
-        root = newNode(100)
-        root.left = newNode(50)
-        root.right = newNode(200)
-        root.left.left = newNode(40)
-        root.left.left.left = newNode(30)
-        root.left.left.left.left = newNode(20)
+        root = splay.newNode(100)
+        root.left = splay.newNode(50)
+        root.right = splay.newNode(200)
+        root.left.left = splay.newNode(40)
+        root.left.left.left = splay.newNode(30)
+        root.left.left.left.left = splay.newNode(20)
         
         key = self.randint(0, 1000)
-        root = insert(root, key)
+        root = splay.insert(root, key)
         self.assertTrue(self.key_exists(root, key), "Inserted key should exist in the tree")
 
     #-- Helper function to check if a key exists in the tree
