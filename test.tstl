@@ -5,9 +5,7 @@
 @import splay
 
 <@
-
-    #-- Define test case for inserting into an empty tree
-    
+#-- Define test case for inserting into an empty tree
     def test_insert_into_empty_tree(self):
         root = None
         key = self.randint(0, 1000)
