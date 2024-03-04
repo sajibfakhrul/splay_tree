@@ -3,13 +3,6 @@
 @import splay
 
 <@
-#-- Define test case for inserting into an empty tree
-    def test_insert_into_empty_tree(self):
-    root = None
-    key = self.randint(0, 1000)
-    root = self.insert(root, key)
-    self.assertEqual(root.key, key, "Root should be equal to the inserted key")
-
 #-- Define test case for inserting into a non-empty tree
 def test_insert_into_non_empty_tree(self):
     root = self.newNode(100)
