@@ -1,11 +1,9 @@
 #-- SplayTreeInsertionTests.tstl --
 
 #-- Include necessary libraries and define configurations
-#--@import deepstate.DeepState as DeepState
+
 @import splay
-@import deepstate
-#--@import deepstate.DeepState as DeepState
-@from deepstate.DeepState import DeepStateTestCase
+
 
 
 <@
@@ -13,7 +11,7 @@
 class SplayTreeInsertionTests(DeepStateTestCase):
 
     #-- Define test case for inserting into an empty tree
-    @deepstate_config(max_tests=100)
+    
     def test_insert_into_empty_tree(self):
         root = None
         key = self.randint(0, 1000)
@@ -21,7 +19,7 @@ class SplayTreeInsertionTests(DeepStateTestCase):
         self.assertEqual(root.key, key, "Root should be equal to the inserted key")
 
     #-- Define test case for inserting into a non-empty tree
-    @deepstate_config(max_tests=100)
+  
     def test_insert_into_non_empty_tree(self):
         root = newNode(100)
         root.left = newNode(50)
