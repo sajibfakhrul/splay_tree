@@ -1,7 +1,5 @@
 #-- SplayTreeInsertionTests.tstl --
 
-#-- Include necessary libraries and define configurations
-
 @import splay
 
 <@
