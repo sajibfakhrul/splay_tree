@@ -4,8 +4,6 @@
 
 @import splay
 
-
-
 <@
 
     #-- Define test case for inserting into an empty tree
