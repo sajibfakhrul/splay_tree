@@ -5,33 +5,33 @@
 <@
 #-- Define test case for inserting into an empty tree
     def test_insert_into_empty_tree(self):
-        root = None
-        key = self.randint(0, 1000)
-        root = self.insert(root, key)
-        self.assertEqual(root.key, key, "Root should be equal to the inserted key")
+    root = None
+    key = self.randint(0, 1000)
+    root = self.insert(root, key)
+    self.assertEqual(root.key, key, "Root should be equal to the inserted key")
 
-    #-- Define test case for inserting into a non-empty tree
-  
-    def test_insert_into_non_empty_tree(self):
-        root = self.newNode(100)
-        root.left = self.newNode(50)
-        root.right = self.newNode(200)
-        root.left.left = self.newNode(40)
-        root.left.left.left = self.newNode(30)
-        root.left.left.left.left = self.newNode(20)
+#-- Define test case for inserting into a non-empty tree
+def test_insert_into_non_empty_tree(self):
+    root = self.newNode(100)
+    root.left = self.newNode(50)
+    root.right = self.newNode(200)
+    root.left.left = self.newNode(40)
+    root.left.left.left = self.newNode(30)
+    root.left.left.left.left = self.newNode(20)
         
-        key = self.randint(0, 1000)
-        root = self.insert(root, key)
-        self.assertTrue(self.key_exists(root, key), "Inserted key should exist in the tree")
+    key = self.randint(0, 1000)
+    root = self.insert(root, key)
+    self.assertTrue(self.key_exists(root, key), "Inserted key should exist in the tree")
 
-    #-- Helper function to check if a key exists in the tree
-    def key_exists(self, root, key):
-        if root is None:
-            return False
-        if root.key == key:
-            return True
-        if root.key < key:
-            return self.key_exists(root.right, key)
-        return self.key_exists(root.left, key)
+#-- Helper function to check if a key exists in the tree
+def key_exists(self, root, key):
+    if root is None:
+        return False
+    if root.key == key:
+        return True
+    if root.key < key:
+        return self.key_exists(root.right, key)
+    return self.key_exists(root.left, key)
+
 @>
 
