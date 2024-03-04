@@ -7,8 +7,6 @@
 
 
 <@
-#-- Define the Splay Tree insertion test class
-class SplayTreeInsertionTests(DeepStateTestCase):
 
     #-- Define test case for inserting into an empty tree
     
