@@ -1,0 +1,22 @@
+pool:
+    keys = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+property:
+    # After inserting a key into the Splay tree, the key should be present in the tree.
+    def test_insertion():
+        root = None
+        for key in keys:
+            root = insert(root, key)
+            assert key in preOrderKeys(root)
+
+log:
+    # Logging the keys present in the preorder traversal of the tree.
+    def preOrderKeys(root):
+        keys = []
+        def preOrderTraversal(node):
+            if node:
+                keys.append(node.key)
+                preOrderTraversal(node.left)
+                preOrderTraversal(node.right)
+        preOrderTraversal(root)
+        return keys
