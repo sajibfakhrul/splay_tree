@@ -20,8 +20,10 @@ pool: <tree> 4 OPAQUE REF
 <tree> := splaynew.SplayTree()
 <tree>.insert(<int>)
 {AttributeError, TypeError} <tree>.remove(<int>)
-<tree>.minimum()
-<tree>.maximum()
+<tree>.minimum(<tree>.root)
+<tree>.maximum(<tree>.root)
+
+
 
 reference: insert ==> add
 reference: METHOD(minimum) ==> CALL(smin)
