@@ -28,8 +28,6 @@ class SplayTree:
         	self.__print_helper(currPtr.right, indent, True)
 
 	
-        	
-	
 	def __search_tree_helper(self, node, key):
 		if node == None or key == node.data:
 			return node
