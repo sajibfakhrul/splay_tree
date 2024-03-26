@@ -1,6 +1,4 @@
 # Splay tree implementation in Python
-
-
 import sys
 
 class Node:
