@@ -186,10 +186,23 @@ class SplayTree:
             node = node.left
         return node
 
+
+    """
+
     def maximum(self, node):
         while node.right != None:
             node = node.right
         return node
+
+"""
+
+    def maximum(self, node):
+        if node is None:
+            return None
+        while node.right is not None:
+            node = node.right
+        return node
+
 
     def successor(self, x):
         if x.right != None:
