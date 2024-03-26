@@ -4,10 +4,9 @@
 log: 1 <splaynew>.inorder()
 log: POST 1 <splaynew>.inorder()
 
-
 # pools are where TSTL stores state of the SUT; REF indicates a pool that is mirrored by a reference implementation
 pool: <int> 4 CONST
-pool: <splay> 3 REF
+pool: <splaynew> 3 REF
 
 <int> := <[1..20]>
 
@@ -16,10 +15,7 @@ pool: <splay> 3 REF
 
 ~<splaynew>.insert(<int>) => \
    (len(<splaynew,1>.inorder()) == pre<(len(<splaynew,1>.inorder())>+1) \
-   or pre<(<splaynew,1>.find(<splaynew,1>))>
-
-
-
+   or pre<(<splaynew,1>.search_tree(<int>))>)
 
 # after doing an inorder traversal, we can re-initalize a splay pool
 <splaynew>.inorder()
@@ -27,9 +23,7 @@ pool: <splay> 3 REF
 ~<splaynew> == ~<splaynew>
 
 # -> before an action indicates a user-defined guard
-len(<splaynew,1>.inorder()) > 5 -> <splay>.display()
-
-
+len(<splaynew,1>.inorder()) > 5 -> <splaynew>.pretty_print()
 
 reference: insert ==> add
 
