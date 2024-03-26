@@ -180,27 +180,13 @@ class SplayTree:
         x = self.__search_tree_helper(self.root, k)
         if x != None:
             self.__splay(x)
- """
-    def minimum(self, node):
-        while node.left != None:
-            node = node.left
-        return node
- """ 
+
     def minimum(self, node):
         if node is None:
             return None
         while node.left is not None:
             node = node.left
-        return node
-
-    """
-
-    def maximum(self, node):
-        while node.right != None:
-            node = node.right
-        return node
-
-"""
+        return node  
 
     def maximum(self, node):
         if node is None:
