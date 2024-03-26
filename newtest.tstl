@@ -1,48 +1,34 @@
 @import splaynew
 
-# logging -- POST means log after the step executes, the number indicates logging level needed for this logging to appear
-log: 1 <splaynew>.inorder()
-log: POST 1 <splaynew>.inorder()
+<@
+def smin(s):
+    try: return min(s)
+    except: return None
 
-# pools are where TSTL stores state of the SUT; REF indicates a pool that is mirrored by a reference implementation
-pool: <int> 4 CONST
-pool: <splaynew> 3 REF
+def smax(s):
+    try: return max(s)
+    except: return None
+@>
+
+
+pool: <int> 4
+pool: <tree> 4 OPAQUE REF
 
 <int> := <[1..20]>
+<int> += 1
 
-# initialize an empty AVL tree
-<splaynew> := splaynew.SplayTree()
-
-~<splaynew>.insert(<int>) => \
-   (len(<splaynew,1>.inorder()) == pre<(len(<splaynew,1>.inorder())>+1) \
-   or pre<(<splaynew,1>.search_tree(<int>))>)
-
-# after doing an inorder traversal, we can re-initalize a splay pool
-<splaynew>.inorder()
-
-~<splaynew> == ~<splaynew>
-
-# -> before an action indicates a user-defined guard
-len(<splaynew,1>.inorder()) > 5 -> <splaynew>.pretty_print()
+<tree> := splaynew.SplayTree()
+<tree>.insert(<int>)
+{AttributeError, TypeError} <tree>.remove(<int>)
+<tree>.minimum()
+<tree>.maximum()
 
 reference: insert ==> add
+reference: METHOD(minimum) ==> CALL(smin)
+reference: METHOD(maximum) ==> CALL(smax)
 
-property:
-    # After inserting a key into the Splay tree, the key should be present in the tree.
-    def test_insertion():
-        root = None
-        for key in keys:
-            root = insert(root, key)
-            assert key in preOrderKeys(root)
 
-log:
-    # Logging the keys present in the preorder traversal of the tree.
-    def preOrderKeys(root):
-        keys = []
-        def preOrderTraversal(node):
-            if node:
-                keys.append(node.key)
-                preOrderTraversal(node.left)
-                preOrderTraversal(node.right)
-        preOrderTraversal(root)
-        return keys
+
+
+
+
