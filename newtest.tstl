@@ -1,8 +1,8 @@
-@import splay
+@import splaynew
 
 # logging -- POST means log after the step executes, the number indicates logging level needed for this logging to appear
-log: 1 <splay>.preOrder()
-log: POST 1 <splay>.preOrder()
+log: 1 <splaynew>.inorder()
+log: POST 1 <splaynew>.inorder()
 
 
 # pools are where TSTL stores state of the SUT; REF indicates a pool that is mirrored by a reference implementation
@@ -12,22 +12,22 @@ pool: <splay> 3 REF
 <int> := <[1..20]>
 
 # initialize an empty AVL tree
-<avl> := avl.AVLTree()
+<splaynew> := splaynew.SplayTree()
 
-~<splay>.insert(<int>) => \
-   (len(<splay,1>.preOrder()) == pre<(len(<splay,1>.preOrder())>+1) \
-   or pre<(<splay,1>.find(<splay,1>))>
+~<splaynew>.insert(<int>) => \
+   (len(<splaynew,1>.inorder()) == pre<(len(<splaynew,1>.inorder())>+1) \
+   or pre<(<splaynew,1>.find(<splaynew,1>))>
 
 
 
 
 # after doing an inorder traversal, we can re-initalize a splay pool
-<splay>.preOrder()
+<splaynew>.inorder()
 
-~<splay> == ~<splay>
+~<splaynew> == ~<splaynew>
 
 # -> before an action indicates a user-defined guard
-len(<splay,1>.preOrder()) > 5 -> <splay>.display()
+len(<splaynew,1>.inorder()) > 5 -> <splay>.display()
 
 
 
