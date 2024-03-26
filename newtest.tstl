@@ -7,7 +7,7 @@ log: POST 1 <splay>.preOrder()
 
 # pools are where TSTL stores state of the SUT; REF indicates a pool that is mirrored by a reference implementation
 pool: <int> 4 CONST
-pool: < splay> 3 REF
+pool: <splay> 3 REF
 
 <int> := <[1..20]>
 
