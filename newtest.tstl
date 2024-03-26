@@ -1,7 +1,10 @@
 @import splay
 
+
+
 pool:
-    keys = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    keys: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+
 
 property:
     # After inserting a key into the Splay tree, the key should be present in the tree.
