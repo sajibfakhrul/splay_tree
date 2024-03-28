@@ -29,6 +29,9 @@ reference: insert ==> add
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
 
+compare:minimum
+compare:maximum
+
 
 
 
