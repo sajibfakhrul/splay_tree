@@ -26,6 +26,7 @@ pool: <tree> 4 OPAQUE REF
 
 
 reference: insert ==> add
+reference: splaynew.SplayTree ==> set
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
 
