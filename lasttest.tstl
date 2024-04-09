@@ -1,0 +1,40 @@
+@import splaynew
+
+<@
+def smin(s):
+    try: return min(s)
+    except: return None
+
+def smax(s):
+    try: return max(s)
+    except: return None
+@>
+
+
+pool: <int> 4
+pool: <tree> 4 OPAQUE REF
+
+<int> := <[1..20]>
+<int> += 1
+
+<tree> := splaynew.SplayTree()
+<tree>.insert(<int>)
+{AttributeError, TypeError} <tree>.remove(<int>)
+<tree>.minimum(<tree>.root)
+<tree>.maximum(<tree>.root)
+
+
+
+reference: insert ==> add
+reference: splaynew.SplayTree ==> set
+reference: METHOD(minimum) ==> CALL(smin)
+reference: METHOD(maximum) ==> CALL(smax)
+
+compare:minimum
+compare:maximum
+
+
+
+
+
+
