@@ -163,7 +163,7 @@ class SplayTree:
     def find(self, key):
         if self.root == None:
             return None
-        self.splay(key)
+        self.__splay(key)
         if self.root.key != key:
             return None
         return self.root.key
@@ -211,7 +211,7 @@ class SplayTree:
 
         self.__splay(node)
     def remove(self, key):
-       self.splay(key)
+       self.__splay(key)
        if key != self.root.key:
            raise 'key not found in tree'
 
@@ -221,7 +221,7 @@ class SplayTree:
        else:
            x = self.root.right
            self.root = self.root.left
-           self.splay(key)
+           self.__splay(key)
            self.root.right = x
 
    
