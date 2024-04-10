@@ -171,7 +171,7 @@ class SplayTree:
         if self.root.data != key:
             return None
         return self.root.data
-    return None
+    
 
     def successor(self, x):
         if x.right != None:
