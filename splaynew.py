@@ -161,7 +161,7 @@ class SplayTree:
             node = node.right
         return node
     
-def find(self, key):
+    def find(self, key):
         if self.root is None:
             return None
     # Search for the node with the key
