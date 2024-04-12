@@ -11,8 +11,8 @@ def smax(s):
 @>
 
 
-pool: <int> 4
-pool: <tree> 4 OPAQUE REF
+pool: <int> 5
+pool: <tree> 5 OPAQUE REF
 
 <int> := <[1..20]>
 <int> += 1
@@ -20,15 +20,18 @@ pool: <tree> 4 OPAQUE REF
 <tree> := splaynew.SplayTree()
 <tree>.insert(<int>)
 {AttributeError, TypeError} <tree>.remove(<int>)
+
 <tree>.minimum(<tree>.root)
 <tree>.maximum(<tree>.root)
 
 
 
 reference: insert ==> add
+reference: remove ==> discard
 reference: splaynew.SplayTree ==> set
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
+
 
 compare:minimum
 compare:maximum
