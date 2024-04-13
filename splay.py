@@ -1,7 +1,7 @@
 import sys
 
 class Node:
-    def  __init__(self, data):
+    def __init__(self, data):
         self.data = data
         self.parent = None
         self.left = None
@@ -167,7 +167,6 @@ class SplayTree:
         if self.root.data != key:
             return None
         return self.root.data
-    
 
     def successor(self, x):
         if x.right is not None:
@@ -190,7 +189,7 @@ class SplayTree:
         return y
 
     def insert(self, key):
-        node =  Node(key)
+        node = Node(key)
         y = None
         x = self.root
 
@@ -212,18 +211,18 @@ class SplayTree:
         self.__splay(node)
     
     def remove(self, key):
-       self.search_tree(key)
-       if key != self.root.data:
-           raise 'key not found in tree'
+        self.search_tree(key)
+        if key != self.root.data:
+            raise ValueError('key not found in tree')
 
-       # Now delete the root.
-       if self.root.left is None:
-           self.root = self.root.right
-       else:
-           x = self.root.right
-           self.root = self.root.left
-           self.search_tree(key)
-           self.root.right = x
+        # Now delete the root.
+        if self.root.left is None:
+            self.root = self.root.right
+        else:
+            x = self.root.right
+            self.root = self.root.left
+            self.search_tree(key)
+            self.root.right = x
 
     def pretty_print(self):
         self.__print_helper(self.root, "", True)
