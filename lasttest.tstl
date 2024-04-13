@@ -1,4 +1,4 @@
-@import splaynew
+@import splay
 
 <@
 def smin(s):
@@ -17,7 +17,7 @@ pool: <tree> 5 OPAQUE REF
 <int> := <[1..20]>
 <int> += 1
 
-<tree> := splaynew.SplayTree()
+<tree> := splay.SplayTree()
 <tree>.insert(<int>)
 {AttributeError, TypeError} <tree>.remove(<int>)
 
@@ -28,7 +28,7 @@ pool: <tree> 5 OPAQUE REF
 
 reference: insert ==> add
 reference: remove ==> discard
-reference: splaynew.SplayTree ==> set
+reference: splay.SplayTree ==> set
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
 
