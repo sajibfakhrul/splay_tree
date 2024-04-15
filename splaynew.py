@@ -163,14 +163,14 @@ class SplayTree:
     
     def find(self, key):
         if self.root is None:
-            return None
+            return False
     # Search for the node with the key
         x = self.__search_tree_helper(self.root, key)
         if x is not None:
             self.__splay(x)
         if self.root.data != key:
-            return None
-        return self.root.data
+            return False
+        return True
     
 
     def successor(self, x):
