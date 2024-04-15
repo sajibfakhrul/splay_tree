@@ -31,11 +31,12 @@ reference: remove ==> discard
 reference: splaynew.SplayTree ==> set
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
+reference: find ==> __contains__
 
 
-compare:minimum
-compare:maximum
-
+compare: minimum
+compare: maximum
+compare: find
 
 
 
