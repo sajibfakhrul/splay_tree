@@ -233,15 +233,5 @@ class SplayTree:
     def pretty_print(self):
         self.__print_helper(self.root, "", True)
 
-if __name__ == '__main__':
-    tree = SplayTree()
-    tree.insert(33)
-    tree.insert(44)
-    tree.insert(67)
-    tree.insert(5)
-    tree.insert(89)
-    tree.insert(41)
-    tree.insert(98)
-    tree.insert(1)
-    tree.pretty_print()
+
    
