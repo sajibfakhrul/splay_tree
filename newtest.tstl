@@ -34,8 +34,7 @@ reference: METHOD(maximum) ==> CALL(smax)
 reference: find ==> __contains__
 
 
-compare: minimum
-compare: maximum
+
 compare: find
 
 
