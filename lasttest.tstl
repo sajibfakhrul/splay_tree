@@ -23,7 +23,7 @@ pool: <tree> 5 OPAQUE REF
 
 <tree>.minimum(<tree>.root)
 <tree>.maximum(<tree>.root)
-
+<tree>.find(<int>)
 
 
 reference: insert ==> add
