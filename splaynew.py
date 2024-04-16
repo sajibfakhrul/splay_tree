@@ -216,8 +216,7 @@ class SplayTree:
 
    
 
-    def pretty_print(self):
-        self.__print_helper(self.root, "", True)
+   
 
 
    
