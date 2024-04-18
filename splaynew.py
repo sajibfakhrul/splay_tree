@@ -204,7 +204,7 @@ class SplayTree:
 
         self.__splay(node)
         
-   def findKey(self, key):
+    def findKey(self, key):
         if self.root is None:
             return None
     # Search for the node with the key
@@ -215,8 +215,6 @@ class SplayTree:
             return None
         return self.root.data     
     
-   
-
      def remove(self, key):
         self.search_tree(key)  # Splay the node with the given key to the root
         if key != self.root.data:
