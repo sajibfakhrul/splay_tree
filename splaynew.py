@@ -205,9 +205,9 @@ class SplayTree:
         self.__splay(node)
     
     def remove(self, key):
-        try:
+       try:
             self.__splay(key)
-        except AttributeError:
+       except AttributeError:
             return False
        if key != self.root.key:
            return False
