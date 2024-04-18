@@ -101,33 +101,7 @@ class SplayTree:
         t.parent = x
         return x
 
-    def __pre_order_helper(self, node):
-        if node != None:
-            sys.stdout.write(str(node.data) + " ")
-            self.__pre_order_helper(node.left)
-            self.__pre_order_helper(node.right)
-
-    def __in_order_helper(self, node):
-        if node != None:
-            self.__in_order_helper(node.left)
-            sys.stdout.write(str(node.data) + " ")
-            self.__in_order_helper(node.right)
-
-    def __post_order_helper(self, node):
-        if node != None:
-            self.__post_order_helper(node.left)
-            self.__post_order_helper(node.right)
-            sys.stdout.write(str(node.data) + " ")
-
-    def preorder(self):
-        self.__pre_order_helper(self.root)
-
-    def inorder(self):
-        self.__in_order_helper(self.root)
-
-    def postorder(self):
-        self.__post_order_helper(self.root)
-
+    
     def search_tree(self, k):
         x = self.__search_tree_helper(self.root, k)
         if x != None:
