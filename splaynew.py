@@ -231,6 +231,13 @@ class SplayTree:
             if self.root:
                 self.root.parent = None
             self.__join(self.root, x)
+            
+     def removeValue(self, key):
+        k = self.findKey(key)   
+        return self.remove(k)
+
+       
+
 
    
 
