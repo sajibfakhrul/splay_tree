@@ -203,8 +203,12 @@ class SplayTree:
             y.right = node
 
         self.__splay(node)
+    
     def remove(self, key):
-       self.__splay(key)
+        try:
+            self.__splay(key)
+        except AttributeError:
+            return False
        if key != self.root.key:
            return False
 
