@@ -215,7 +215,7 @@ class SplayTree:
     def remove(self, key):
        self.__splay(key)
        if key != self.root.key:
-           raise 'key not found in tree'
+           return False
 
        # Now delete the root.
        if self.root.left== None:
