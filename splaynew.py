@@ -183,6 +183,8 @@ class SplayTree:
         return y
 
     def insert(self, key):
+        if self.find(key):
+            return False
         node =  Node(key)
         y = None
         x = self.root
