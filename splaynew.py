@@ -203,23 +203,34 @@ class SplayTree:
             y.right = node
 
         self.__splay(node)
+        
+   def findKey(self, key):
+        if self.root is None:
+            return None
+    # Search for the node with the key
+        x = self.__search_tree_helper(self.root, key)
+        if x is not None:
+            self.__splay(x)
+        if self.root.data != key:
+            return None
+        return self.root.data     
     
-    def remove(self, key):
-       try:
-            self.__splay(key)
-       except AttributeError:
-            return False
-       if key != self.root.key:
-           return False
+   
 
-       # Now delete the root.
-       if self.root.left== None:
-           self.root = self.root.right
-       else:
-           x = self.root.right
-           self.root = self.root.left
-           self.__splay(key)
-           self.root.right = x
+     def remove(self, key):
+        self.search_tree(key)  # Splay the node with the given key to the root
+        if key != self.root.data:
+            return False
+
+        # Now delete the root.
+        if self.root.left is None:
+            self.root = self.root.right
+        else:
+            x = self.root.right
+            self.root = self.root.left
+            if self.root:
+                self.root.parent = None
+            self.__join(self.root, x)
 
    
 
