@@ -19,7 +19,7 @@ pool: <tree> 5 OPAQUE REF
 
 <tree> := splaynew.SplayTree()
 <tree>.insert(<int>)
-<tree>.remove(<int>)
+<tree>.removeValue(<int>)
 
 <tree>.minimum(<tree>.root)
 <tree>.maximum(<tree>.root)
@@ -32,7 +32,7 @@ reference: splaynew.SplayTree ==> set
 reference: METHOD(minimum) ==> CALL(smin)
 reference: METHOD(maximum) ==> CALL(smax)
 reference: find ==> __contains__
-reference: remove ==> discard
+reference: removeValue ==> discard
 
 
 
