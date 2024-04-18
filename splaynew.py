@@ -215,7 +215,7 @@ class SplayTree:
             return None
         return self.root.data     
     
-     def remove(self, key):
+    def remove(self, key):
         self.search_tree(key)  # Splay the node with the given key to the root
         if key != self.root.data:
             return False
@@ -230,7 +230,7 @@ class SplayTree:
                 self.root.parent = None
             self.__join(self.root, x)
             
-     def removeValue(self, key):
+    def removeValue(self, key):
         k = self.findKey(key)   
         return self.remove(k)
 
